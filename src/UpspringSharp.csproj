@@ -108,6 +108,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -146,14 +147,19 @@
     <Content Include="buttons\camera.gif" />
     <Content Include="buttons\color.gif" />
     <Content Include="buttons\curvedpoly.png" />
+    <None Include="buttons\curved_polygon.ico" />
+    <None Include="buttons\flip_polygon1.ico" />
+    <None Include="buttons\flip_polygon2.ico" />
+    <None Include="buttons\flip_polygon3.ico" />
     <Content Include="buttons\move.gif" />
+    <None Include="buttons\move_origin.ico" />
     <Content Include="buttons\originmove.png" />
     <Content Include="buttons\polyflip.gif" />
     <Content Include="buttons\polyflip.png" />
     <Content Include="buttons\rotate.gif" />
     <Content Include="buttons\rotatetex.png" />
+    <None Include="buttons\rotate_3do.ico" />
     <Content Include="buttons\scale.gif" />
-    <Content Include="buttons\test.gif" />
     <Content Include="buttons\texture.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

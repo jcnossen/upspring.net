@@ -29,7 +29,6 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.toolCubeBrush = new System.Windows.Forms.ToolStripButton();
 			this.toolConeBrush = new System.Windows.Forms.ToolStripButton();
 			this.toolCilinderBrush = new System.Windows.Forms.ToolStripButton();
@@ -45,14 +44,14 @@
 			this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
 			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			this.toolCamera = new System.Windows.Forms.ToolStripButton();
-			this.toolMove = new System.Windows.Forms.ToolStripButton();
-			this.toolScale = new System.Windows.Forms.ToolStripButton();
-			this.toolRotate = new System.Windows.Forms.ToolStripButton();
-			this.toolOriginMove = new System.Windows.Forms.ToolStripButton();
-			this.toolColor = new System.Windows.Forms.ToolStripButton();
-			this.toolPolyFlip = new System.Windows.Forms.ToolStripButton();
-			this.toolRotateTex = new System.Windows.Forms.ToolStripButton();
-			this.toolTexture = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+			this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabModel = new System.Windows.Forms.TabPage();
 			this.treeView = new System.Windows.Forms.TreeView();
@@ -147,7 +146,7 @@
 			// splitContainer.Panel2
 			// 
 			this.splitContainer.Panel2.Controls.Add(this.tabControl);
-			this.splitContainer.Size = new System.Drawing.Size(814, 427);
+			this.splitContainer.Size = new System.Drawing.Size(814, 406);
 			this.splitContainer.SplitterDistance = 587;
 			this.splitContainer.TabIndex = 1;
 			// 
@@ -156,11 +155,11 @@
 			// 
 			// toolStripContainer.ContentPanel
 			// 
-			this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(587, 388);
+			this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(587, 367);
 			this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
 			this.toolStripContainer.Name = "toolStripContainer";
-			this.toolStripContainer.Size = new System.Drawing.Size(587, 427);
+			this.toolStripContainer.Size = new System.Drawing.Size(587, 406);
 			this.toolStripContainer.TabIndex = 2;
 			this.toolStripContainer.Text = "toolStripContainer1";
 			// 
@@ -175,14 +174,14 @@
 			this.toolStrip.ImageScalingSize = new System.Drawing.Size(32, 32);
 			this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolCamera,
-            this.toolMove,
-            this.toolScale,
-            this.toolRotate,
-            this.toolOriginMove,
-            this.toolColor,
-            this.toolPolyFlip,
-            this.toolRotateTex,
-            this.toolTexture});
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripButton3,
+            this.toolStripButton4,
+            this.toolStripButton5,
+            this.toolStripButton6,
+            this.toolStripButton7,
+            this.toolStripButton8});
 			this.toolStrip.Location = new System.Drawing.Point(3, 0);
 			this.toolStrip.Name = "toolStrip";
 			this.toolStrip.Padding = new System.Windows.Forms.Padding(0);
@@ -192,83 +191,83 @@
 			// toolCamera
 			// 
 			this.toolCamera.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolCamera.Image = ((System.Drawing.Image)(resources.GetObject("toolCamera.Image")));
+			this.toolCamera.Image = global::UpspringSharp.Properties.Resources.camera;
 			this.toolCamera.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolCamera.Name = "toolCamera";
 			this.toolCamera.Size = new System.Drawing.Size(36, 36);
 			this.toolCamera.Text = "toolStripButton1";
 			// 
-			// toolMove
+			// toolStripButton1
 			// 
-			this.toolMove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolMove.Image = ((System.Drawing.Image)(resources.GetObject("toolMove.Image")));
-			this.toolMove.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolMove.Name = "toolMove";
-			this.toolMove.Size = new System.Drawing.Size(36, 36);
-			this.toolMove.Text = "toolStripButton3";
+			this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton1.Image = global::UpspringSharp.Properties.Resources.move;
+			this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton1.Name = "toolStripButton1";
+			this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
+			this.toolStripButton1.Text = "toolStripButton1";
 			// 
-			// toolScale
+			// toolStripButton2
 			// 
-			this.toolScale.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolScale.Image = ((System.Drawing.Image)(resources.GetObject("toolScale.Image")));
-			this.toolScale.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolScale.Name = "toolScale";
-			this.toolScale.Size = new System.Drawing.Size(36, 36);
-			this.toolScale.Text = "toolStripButton8";
+			this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton2.Image = global::UpspringSharp.Properties.Resources.rotate;
+			this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton2.Name = "toolStripButton2";
+			this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
+			this.toolStripButton2.Text = "toolStripButton2";
 			// 
-			// toolRotate
+			// toolStripButton3
 			// 
-			this.toolRotate.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolRotate.Image = ((System.Drawing.Image)(resources.GetObject("toolRotate.Image")));
-			this.toolRotate.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolRotate.Name = "toolRotate";
-			this.toolRotate.Size = new System.Drawing.Size(36, 36);
-			this.toolRotate.Text = "toolStripButton6";
+			this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton3.Image = global::UpspringSharp.Properties.Resources.scale;
+			this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton3.Name = "toolStripButton3";
+			this.toolStripButton3.Size = new System.Drawing.Size(36, 36);
+			this.toolStripButton3.Text = "toolStripButton3";
 			// 
-			// toolOriginMove
+			// toolStripButton4
 			// 
-			this.toolOriginMove.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolOriginMove.Image = ((System.Drawing.Image)(resources.GetObject("toolOriginMove.Image")));
-			this.toolOriginMove.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolOriginMove.Name = "toolOriginMove";
-			this.toolOriginMove.Size = new System.Drawing.Size(36, 36);
-			this.toolOriginMove.Text = "toolStripButton4";
+			this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton4.Image = global::UpspringSharp.Properties.Resources.originmove;
+			this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton4.Name = "toolStripButton4";
+			this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
+			this.toolStripButton4.Text = "toolStripButton4";
 			// 
-			// toolColor
+			// toolStripButton5
 			// 
-			this.toolColor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolColor.Image = ((System.Drawing.Image)(resources.GetObject("toolColor.Image")));
-			this.toolColor.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolColor.Name = "toolColor";
-			this.toolColor.Size = new System.Drawing.Size(36, 36);
-			this.toolColor.Text = "toolStripButton2";
+			this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton5.Image = global::UpspringSharp.Properties.Resources.color;
+			this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton5.Name = "toolStripButton5";
+			this.toolStripButton5.Size = new System.Drawing.Size(36, 36);
+			this.toolStripButton5.Text = "toolStripButton5";
 			// 
-			// toolPolyFlip
+			// toolStripButton6
 			// 
-			this.toolPolyFlip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolPolyFlip.Image = ((System.Drawing.Image)(resources.GetObject("toolPolyFlip.Image")));
-			this.toolPolyFlip.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolPolyFlip.Name = "toolPolyFlip";
-			this.toolPolyFlip.Size = new System.Drawing.Size(36, 36);
-			this.toolPolyFlip.Text = "toolStripButton5";
+			this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton6.Image = global::UpspringSharp.Properties.Resources.polyflip1;
+			this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton6.Name = "toolStripButton6";
+			this.toolStripButton6.Size = new System.Drawing.Size(36, 36);
+			this.toolStripButton6.Text = "toolStripButton6";
 			// 
-			// toolRotateTex
+			// toolStripButton7
 			// 
-			this.toolRotateTex.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolRotateTex.Image = ((System.Drawing.Image)(resources.GetObject("toolRotateTex.Image")));
-			this.toolRotateTex.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolRotateTex.Name = "toolRotateTex";
-			this.toolRotateTex.Size = new System.Drawing.Size(36, 36);
-			this.toolRotateTex.Text = "toolStripButton7";
+			this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton7.Image = global::UpspringSharp.Properties.Resources.texture;
+			this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton7.Name = "toolStripButton7";
+			this.toolStripButton7.Size = new System.Drawing.Size(36, 36);
+			this.toolStripButton7.Text = "toolStripButton7";
 			// 
-			// toolTexture
+			// toolStripButton8
 			// 
-			this.toolTexture.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolTexture.Image = ((System.Drawing.Image)(resources.GetObject("toolTexture.Image")));
-			this.toolTexture.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.toolTexture.Name = "toolTexture";
-			this.toolTexture.Size = new System.Drawing.Size(36, 36);
-			this.toolTexture.Text = "toolStripButton9";
+			this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.toolStripButton8.Image = global::UpspringSharp.Properties.Resources.rotatetex;
+			this.toolStripButton8.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.toolStripButton8.Name = "toolStripButton8";
+			this.toolStripButton8.Size = new System.Drawing.Size(36, 36);
+			this.toolStripButton8.Text = "toolStripButton8";
 			// 
 			// tabControl
 			// 
@@ -279,7 +278,7 @@
 			this.tabControl.Location = new System.Drawing.Point(0, 0);
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
-			this.tabControl.Size = new System.Drawing.Size(223, 427);
+			this.tabControl.Size = new System.Drawing.Size(223, 406);
 			this.tabControl.TabIndex = 2;
 			// 
 			// tabModel
@@ -288,7 +287,7 @@
 			this.tabModel.Location = new System.Drawing.Point(4, 22);
 			this.tabModel.Name = "tabModel";
 			this.tabModel.Padding = new System.Windows.Forms.Padding(3);
-			this.tabModel.Size = new System.Drawing.Size(215, 401);
+			this.tabModel.Size = new System.Drawing.Size(215, 380);
 			this.tabModel.TabIndex = 0;
 			this.tabModel.Text = "Model";
 			this.tabModel.UseVisualStyleBackColor = true;
@@ -299,7 +298,7 @@
 			this.treeView.Location = new System.Drawing.Point(3, 3);
 			this.treeView.Name = "treeView";
 			this.treeView.PathSeparator = "/";
-			this.treeView.Size = new System.Drawing.Size(209, 395);
+			this.treeView.Size = new System.Drawing.Size(209, 374);
 			this.treeView.TabIndex = 0;
 			// 
 			// tabObjTree
@@ -307,7 +306,7 @@
 			this.tabObjTree.Location = new System.Drawing.Point(4, 22);
 			this.tabObjTree.Name = "tabObjTree";
 			this.tabObjTree.Padding = new System.Windows.Forms.Padding(3);
-			this.tabObjTree.Size = new System.Drawing.Size(215, 401);
+			this.tabObjTree.Size = new System.Drawing.Size(215, 380);
 			this.tabObjTree.TabIndex = 2;
 			this.tabObjTree.Text = "Tree";
 			this.tabObjTree.UseVisualStyleBackColor = true;
@@ -318,7 +317,7 @@
 			this.tabTextures.Location = new System.Drawing.Point(4, 22);
 			this.tabTextures.Name = "tabTextures";
 			this.tabTextures.Padding = new System.Windows.Forms.Padding(3);
-			this.tabTextures.Size = new System.Drawing.Size(215, 401);
+			this.tabTextures.Size = new System.Drawing.Size(215, 380);
 			this.tabTextures.TabIndex = 1;
 			this.tabTextures.Text = "Materials";
 			this.tabTextures.UseVisualStyleBackColor = true;
@@ -328,14 +327,14 @@
 			this.materialBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.materialBrowser.Location = new System.Drawing.Point(3, 3);
 			this.materialBrowser.Name = "materialBrowser";
-			this.materialBrowser.Size = new System.Drawing.Size(209, 395);
+			this.materialBrowser.Size = new System.Drawing.Size(209, 374);
 			this.materialBrowser.TabIndex = 0;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(814, 427);
+			this.ClientSize = new System.Drawing.Size(814, 406);
 			this.Controls.Add(this.splitContainer);
 			this.KeyPreview = true;
 			this.Menu = this.mainMenu;
@@ -373,21 +372,21 @@
 		private System.Windows.Forms.MenuItem menuNew;
 		private System.Windows.Forms.MenuItem menuOpen;
 		private System.Windows.Forms.MenuItem menuSave;
-		private System.Windows.Forms.ToolStripButton toolCamera;
-		private System.Windows.Forms.ToolStripButton toolMove;
-		private System.Windows.Forms.ToolStripButton toolScale;
-		private System.Windows.Forms.ToolStripButton toolRotate;
-		private System.Windows.Forms.ToolStripButton toolOriginMove;
-		private System.Windows.Forms.ToolStripButton toolColor;
-		private System.Windows.Forms.ToolStripButton toolPolyFlip;
-		private System.Windows.Forms.ToolStripButton toolRotateTex;
-		private System.Windows.Forms.ToolStripButton toolTexture;
 		private System.Windows.Forms.TabControl tabControl;
 		private System.Windows.Forms.TabPage tabModel;
 		private System.Windows.Forms.TreeView treeView;
 		private System.Windows.Forms.TabPage tabObjTree;
 		private System.Windows.Forms.TabPage tabTextures;
 		private MaterialBrowser materialBrowser;
+		private System.Windows.Forms.ToolStripButton toolCamera;
+		private System.Windows.Forms.ToolStripButton toolStripButton1;
+		private System.Windows.Forms.ToolStripButton toolStripButton2;
+		private System.Windows.Forms.ToolStripButton toolStripButton3;
+		private System.Windows.Forms.ToolStripButton toolStripButton4;
+		private System.Windows.Forms.ToolStripButton toolStripButton5;
+		private System.Windows.Forms.ToolStripButton toolStripButton6;
+		private System.Windows.Forms.ToolStripButton toolStripButton7;
+		private System.Windows.Forms.ToolStripButton toolStripButton8;
 	}
 }
 

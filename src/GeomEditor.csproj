@@ -3,13 +3,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{47126D21-9926-4B87-BC29-63E91D9A0665}</ProjectGuid>
+    <ProjectGuid>{B309A932-232A-4442-BA7D-0C84801CA969}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UpspringSharp</RootNamespace>
-    <AssemblyName>UpspringSharp</AssemblyName>
+    <RootNamespace>GeomEditor</RootNamespace>
+    <AssemblyName>GeomEditor</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -21,24 +21,37 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -47,7 +60,6 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Tao.DevIl, Version=1.6.8.3, Culture=neutral, PublicKeyToken=7ec4053013524957, processorArchitecture=MSIL" />
@@ -55,16 +67,9 @@
     <Reference Include="Tao.Platform.Windows, Version=1.0.0.5, Culture=neutral, PublicKeyToken=701104b2da67a104, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataLoadContext.cs" />
-    <Compile Include="DisposableManager.cs" />
-    <Compile Include="Exceptions.cs" />
-    <Compile Include="gl\Font.cs" />
-    <Compile Include="gl\GlEnums.cs" />
-    <Compile Include="gl\Texture.cs" />
-    <Compile Include="gl\Texture2D.cs" />
-    <Compile Include="gl\Util.cs" />
-    <Compile Include="gl\VertexBuffer.cs" />
-    <Compile Include="Image.cs" />
+    <Compile Include="BrushShapeBuilder.cs" />
+    <Compile Include="CSGMapEditor.cs" />
+    <Compile Include="GeomMeshSceneEditor.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,12 +92,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialBrowser\MaterialBrowser.resx">
       <DependentUpon>MaterialBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialBrowser\MaterialView.resx">
       <DependentUpon>MaterialView.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,13 +109,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PropertyEditorForm.resx">
       <DependentUpon>PropertyEditorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RenderCtl.resx">
+      <DependentUpon>RenderCtl.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="ValueInput.resx">
       <DependentUpon>ValueInput.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -124,7 +139,14 @@
     <Compile Include="PropertyEditorForm.Designer.cs">
       <DependentUpon>PropertyEditorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TextureManager.cs" />
+    <Compile Include="RenderCtl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RenderCtl.Designer.cs">
+      <DependentUpon>RenderCtl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SceneManager.cs" />
+    <Compile Include="TerrainEditor.cs" />
     <Compile Include="ValueInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,28 +155,42 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="mathlib\math.csproj">
+    <ProjectReference Include="..\..\engine\engine.csproj">
+      <Project>{37C8BB28-7048-41AD-92A9-98772838C279}</Project>
+      <Name>engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\mathlib\math.csproj">
       <Project>{C7286C96-2B6D-49FA-9089-C316443641D0}</Project>
       <Name>math</Name>
     </ProjectReference>
-    <ProjectReference Include="util\util.csproj">
+    <ProjectReference Include="..\..\util\util.csproj">
       <Project>{8B83982F-D8D6-462E-A35A-09015E47D50D}</Project>
       <Name>util</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="buttons\camera.gif" />
-    <Content Include="buttons\color.gif" />
-    <Content Include="buttons\curvedpoly.png" />
-    <Content Include="buttons\move.gif" />
-    <Content Include="buttons\originmove.png" />
-    <Content Include="buttons\polyflip.gif" />
-    <Content Include="buttons\polyflip.png" />
-    <Content Include="buttons\rotate.gif" />
-    <Content Include="buttons\rotatetex.png" />
-    <Content Include="buttons\scale.gif" />
-    <Content Include="buttons\test.gif" />
-    <Content Include="buttons\texture.gif" />
+    <None Include="Resources\tool_cone.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool_cilinder.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool_cube.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool_csg_add.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool_csg_deintersect.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool_csg_intersect.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tool_csg_substract.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move1.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

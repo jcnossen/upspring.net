@@ -58,6 +58,17 @@
     <Compile Include="DataLoadContext.cs" />
     <Compile Include="DisposableManager.cs" />
     <Compile Include="Exceptions.cs" />
+    <Compile Include="geom\Frustum.cs" />
+    <Compile Include="geom\IIntersectable.cs" />
+    <Compile Include="geom\Poly.cs" />
+    <Compile Include="geom\Ray.cs" />
+    <Compile Include="geom\Vertex.cs" />
+    <Compile Include="GLView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GLView.Designer.cs">
+      <DependentUpon>GLView.cs</DependentUpon>
+    </Compile>
     <Compile Include="gl\Font.cs" />
     <Compile Include="gl\GlEnums.cs" />
     <Compile Include="gl\Texture.cs" />
@@ -85,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GLView.resx">
+      <DependentUpon>GLView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

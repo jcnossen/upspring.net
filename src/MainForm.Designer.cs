@@ -58,9 +58,11 @@
 			this.tabObjTree = new System.Windows.Forms.TabPage();
 			this.tabTextures = new System.Windows.Forms.TabPage();
 			this.materialBrowser = new upspring.MaterialBrowser();
+			this.glView1 = new UpspringSharp.GLView();
 			this.splitContainer.Panel1.SuspendLayout();
 			this.splitContainer.Panel2.SuspendLayout();
 			this.splitContainer.SuspendLayout();
+			this.toolStripContainer.ContentPanel.SuspendLayout();
 			this.toolStripContainer.TopToolStripPanel.SuspendLayout();
 			this.toolStripContainer.SuspendLayout();
 			this.toolStrip.SuspendLayout();
@@ -146,7 +148,7 @@
 			// splitContainer.Panel2
 			// 
 			this.splitContainer.Panel2.Controls.Add(this.tabControl);
-			this.splitContainer.Size = new System.Drawing.Size(814, 406);
+			this.splitContainer.Size = new System.Drawing.Size(814, 301);
 			this.splitContainer.SplitterDistance = 587;
 			this.splitContainer.TabIndex = 1;
 			// 
@@ -155,11 +157,12 @@
 			// 
 			// toolStripContainer.ContentPanel
 			// 
-			this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(587, 367);
+			this.toolStripContainer.ContentPanel.Controls.Add(this.glView1);
+			this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(587, 262);
 			this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
 			this.toolStripContainer.Name = "toolStripContainer";
-			this.toolStripContainer.Size = new System.Drawing.Size(587, 406);
+			this.toolStripContainer.Size = new System.Drawing.Size(587, 301);
 			this.toolStripContainer.TabIndex = 2;
 			this.toolStripContainer.Text = "toolStripContainer1";
 			// 
@@ -278,7 +281,7 @@
 			this.tabControl.Location = new System.Drawing.Point(0, 0);
 			this.tabControl.Name = "tabControl";
 			this.tabControl.SelectedIndex = 0;
-			this.tabControl.Size = new System.Drawing.Size(223, 406);
+			this.tabControl.Size = new System.Drawing.Size(223, 301);
 			this.tabControl.TabIndex = 2;
 			// 
 			// tabModel
@@ -287,7 +290,7 @@
 			this.tabModel.Location = new System.Drawing.Point(4, 22);
 			this.tabModel.Name = "tabModel";
 			this.tabModel.Padding = new System.Windows.Forms.Padding(3);
-			this.tabModel.Size = new System.Drawing.Size(215, 380);
+			this.tabModel.Size = new System.Drawing.Size(215, 275);
 			this.tabModel.TabIndex = 0;
 			this.tabModel.Text = "Model";
 			this.tabModel.UseVisualStyleBackColor = true;
@@ -298,7 +301,7 @@
 			this.treeView.Location = new System.Drawing.Point(3, 3);
 			this.treeView.Name = "treeView";
 			this.treeView.PathSeparator = "/";
-			this.treeView.Size = new System.Drawing.Size(209, 374);
+			this.treeView.Size = new System.Drawing.Size(209, 269);
 			this.treeView.TabIndex = 0;
 			// 
 			// tabObjTree
@@ -306,7 +309,7 @@
 			this.tabObjTree.Location = new System.Drawing.Point(4, 22);
 			this.tabObjTree.Name = "tabObjTree";
 			this.tabObjTree.Padding = new System.Windows.Forms.Padding(3);
-			this.tabObjTree.Size = new System.Drawing.Size(215, 380);
+			this.tabObjTree.Size = new System.Drawing.Size(215, 275);
 			this.tabObjTree.TabIndex = 2;
 			this.tabObjTree.Text = "Tree";
 			this.tabObjTree.UseVisualStyleBackColor = true;
@@ -317,7 +320,7 @@
 			this.tabTextures.Location = new System.Drawing.Point(4, 22);
 			this.tabTextures.Name = "tabTextures";
 			this.tabTextures.Padding = new System.Windows.Forms.Padding(3);
-			this.tabTextures.Size = new System.Drawing.Size(215, 380);
+			this.tabTextures.Size = new System.Drawing.Size(215, 275);
 			this.tabTextures.TabIndex = 1;
 			this.tabTextures.Text = "Materials";
 			this.tabTextures.UseVisualStyleBackColor = true;
@@ -327,14 +330,22 @@
 			this.materialBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.materialBrowser.Location = new System.Drawing.Point(3, 3);
 			this.materialBrowser.Name = "materialBrowser";
-			this.materialBrowser.Size = new System.Drawing.Size(209, 374);
+			this.materialBrowser.Size = new System.Drawing.Size(209, 269);
 			this.materialBrowser.TabIndex = 0;
+			// 
+			// glView1
+			// 
+			this.glView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.glView1.Location = new System.Drawing.Point(0, 0);
+			this.glView1.Name = "glView1";
+			this.glView1.Size = new System.Drawing.Size(587, 262);
+			this.glView1.TabIndex = 0;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(814, 406);
+			this.ClientSize = new System.Drawing.Size(814, 301);
 			this.Controls.Add(this.splitContainer);
 			this.KeyPreview = true;
 			this.Menu = this.mainMenu;
@@ -343,6 +354,7 @@
 			this.splitContainer.Panel1.ResumeLayout(false);
 			this.splitContainer.Panel2.ResumeLayout(false);
 			this.splitContainer.ResumeLayout(false);
+			this.toolStripContainer.ContentPanel.ResumeLayout(false);
 			this.toolStripContainer.TopToolStripPanel.ResumeLayout(false);
 			this.toolStripContainer.TopToolStripPanel.PerformLayout();
 			this.toolStripContainer.ResumeLayout(false);
@@ -387,6 +399,7 @@
 		private System.Windows.Forms.ToolStripButton toolStripButton6;
 		private System.Windows.Forms.ToolStripButton toolStripButton7;
 		private System.Windows.Forms.ToolStripButton toolStripButton8;
+		private UpspringSharp.GLView glView1;
 	}
 }
 

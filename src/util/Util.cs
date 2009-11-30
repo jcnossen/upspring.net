@@ -21,10 +21,7 @@ namespace ce.util
 
 		public static bool IsPowerOfTwo(int p)
 		{
-			int i = 1;
-			while (i < p)
-				i *= 2;
-			return i == p;
+			return (p & (p - 1)) == 0;
 		}
 	}
 }

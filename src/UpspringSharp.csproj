@@ -141,6 +141,7 @@
     <Compile Include="PropertyEditorForm.Designer.cs">
       <DependentUpon>PropertyEditorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="TextureBinTree.cs" />
     <Compile Include="TextureManager.cs" />
     <Compile Include="ValueInput.cs">
       <SubType>Form</SubType>

@@ -24,6 +24,12 @@ namespace ce.engine
 			Dispose();
 		}
 
+		public Image(int w,int h, int channels, int format) {
+			id = Il.ilGenImage();
+			Il.ilBindImage(id);
+			Il.ilTexImage(w, h, 1, 4, format, Il.IL_UNSIGNED_BYTE, IntPtr.Zero);
+		}
+
 		public Image(byte[] data)
 		{
 			id = Il.ilGenImage();
@@ -83,6 +89,20 @@ namespace ce.engine
 			Marshal.Copy(src, data, 0, len);
 
 			return data;
+		}
+
+		public int Format
+		{
+			get {
+				return Il.ilGetInteger(Il.IL_IMAGE_FORMAT);
+			}
+		}
+
+		public int Type
+		{
+			get {
+				return Il.ilGetInteger(Il.IL_IMAGE_TYPE);
+			}
 		}
 
 		public int Width

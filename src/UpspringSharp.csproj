@@ -61,6 +61,7 @@
     <Compile Include="Exceptions.cs" />
     <Compile Include="geom\Frustum.cs" />
     <Compile Include="geom\IIntersectable.cs" />
+    <Compile Include="geom\MdlObject.cs" />
     <Compile Include="geom\Poly.cs" />
     <Compile Include="geom\PolyMesh.cs" />
     <Compile Include="geom\Ray.cs" />

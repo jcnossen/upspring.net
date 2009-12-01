@@ -11,7 +11,6 @@ using Tao.Platform.Windows;
 using Tao.OpenGl;
 using Tao.DevIl;
 
-using System.Drawing;
 using ce.math;
 using ce.engine.geom;
 using ce.engine.gl;

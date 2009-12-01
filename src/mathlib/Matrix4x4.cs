@@ -607,10 +607,5 @@ namespace ce.math
 			m[7] += v.y;
 			m[11] += v.z;
 		}
-
-		public Vector3 GetPos()
-		{
-			return new Vector3(m[3], m[7], m[11]);
-		}
 	}
 }

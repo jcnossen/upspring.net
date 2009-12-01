@@ -48,12 +48,6 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug game|AnyCPU' ">
-    <OutputPath>bin\Debug game\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug game|x86' ">
-    <OutputPath>bin\x86\Debug game\</OutputPath>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -66,7 +60,6 @@
     <Compile Include="AABBox.cs" />
     <Compile Include="int2.cs" />
     <Compile Include="MathTableParsing.cs" />
-    <Compile Include="Matrix.cs" />
     <Compile Include="Matrix3x3.cs" />
     <Compile Include="Quaternion.cs" />
     <Compile Include="Sphere.cs" />

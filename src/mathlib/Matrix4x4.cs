@@ -601,14 +601,6 @@ namespace ce.math
 			return r;
 		}
 
-		public Matrix ToMatrix()
-		{
-			float[] d = new float[16];
-			for (int i = 0; i < 16; i++)
-				d[i] = m[i];
-			return new Matrix(4, d);
-		}
-
 		public void AddTranslation(Vector3 v)
 		{
 			m[3] += v.x;

@@ -55,12 +55,14 @@
     <Reference Include="Tao.Platform.Windows, Version=1.0.0.5, Culture=neutral, PublicKeyToken=701104b2da67a104, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camera.cs" />
     <Compile Include="DataLoadContext.cs" />
     <Compile Include="DisposableManager.cs" />
     <Compile Include="Exceptions.cs" />
     <Compile Include="geom\Frustum.cs" />
     <Compile Include="geom\IIntersectable.cs" />
     <Compile Include="geom\Poly.cs" />
+    <Compile Include="geom\PolyMesh.cs" />
     <Compile Include="geom\Ray.cs" />
     <Compile Include="geom\Vertex.cs" />
     <Compile Include="GLView.cs">
@@ -175,6 +177,11 @@
     <None Include="buttons\rotate_3do.ico" />
     <Content Include="buttons\scale.gif" />
     <Content Include="buttons\texture.gif" />
+    <Content Include="geom\MdlObject.cpp" />
+    <Content Include="geom\MeshIterators.h" />
+    <Content Include="geom\Model.cpp" />
+    <Content Include="geom\Model.h" />
+    <Content Include="geom\PolyMesh.cpp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

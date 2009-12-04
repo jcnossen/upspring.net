@@ -60,7 +60,6 @@ namespace UpspringSharp.geom
 				n[a] = verts[(a + 1) % n.Length];
 			verts = n;
 		}
-
 	}
 
 	public class PolyMesh
@@ -68,7 +67,7 @@ namespace UpspringSharp.geom
 		public Vertex[] verts = new Vertex[0];
 		public Poly[] poly = new Poly[0];
 
-		PolyMesh Clone()
+		public PolyMesh Clone()
 		{
 			PolyMesh cp = new PolyMesh();
 
@@ -82,7 +81,7 @@ namespace UpspringSharp.geom
 			return cp;
 		}
 
-		void Transform(Matrix4x4 transform)
+		public void Transform(Matrix4x4 transform)
 		{
 			Matrix4x4 normalTransform = transform.Inverse().Transpose();
 
@@ -93,14 +92,16 @@ namespace UpspringSharp.geom
 			}
 		}
 
+		public void InvalidateRenderData()
+		{}
 
-		bool IsEqualVertexTC(Vertex a, Vertex b)
+		public bool IsEqualVertexTC(Vertex a, Vertex b)
 		{
 			return (a.pos - b.pos).SqLength < 0.001f &&
 				a.tc.x == b.tc.x && a.tc.y == b.tc.y;
 		}
 
-		bool IsEqualVertexTCNormal(Vertex a, Vertex b)
+		public bool IsEqualVertexTCNormal(Vertex a, Vertex b)
 		{
 			return (a.pos - b.pos).SqLength < 0.001f &&
 				a.tc.x == b.tc.x && a.tc.y == b.tc.y &&
@@ -149,7 +150,7 @@ namespace UpspringSharp.geom
 			}
 		}
 
-		void Optimize(IsEqualVertexDelegate cb)
+		public void Optimize(IsEqualVertexDelegate cb)
 		{
 			OptimizeVertices(cb);
 
@@ -175,8 +176,7 @@ namespace UpspringSharp.geom
 			poly = npl.ToArray();
 		}
 
-
-		void CalculateRadius(Matrix4x4 tr, Vector3 mid, ref float radius)
+		public void CalculateRadius(Matrix4x4 tr, Vector3 mid, ref float radius)
 		{
 			for (int v = 0; v < verts.Length; v++) {
 				float r = (tr.Transform(verts[v].pos) - mid).Length;
@@ -184,7 +184,7 @@ namespace UpspringSharp.geom
 			}
 		}
 
-		int[] MakeTris()
+		public int[] MakeTris()
 		{
 			List<int> tris = new List<int>();
 
@@ -198,8 +198,7 @@ namespace UpspringSharp.geom
 			return tris.ToArray();
 		}
 
-
-		void GenerateUniqueVectors(Vertex[] verts, out Vector3[] vertPos, out int[] old2new)
+		public void GenerateUniqueVectors(Vertex[] verts, out Vector3[] vertPos, out int[] old2new)
 		{
 			List<Vector3> vp = new List<Vector3>();
 			old2new = new int[verts.Length];
@@ -221,13 +220,12 @@ namespace UpspringSharp.geom
 			vertPos = vp.ToArray();
 		}
 
-
 		struct FaceVert
 		{
 			public List<int> adjacentFaces;
 		};
 
-		void CalculateNormals2(float maxSmoothAngle)
+		public void CalculateNormals2(float maxSmoothAngle)
 		{
 			float ang_c = (float)Math.Cos(Math.PI * maxSmoothAngle / 180.0f);
 			Vector3[] vertPos;
@@ -323,7 +321,7 @@ namespace UpspringSharp.geom
 		// In short, the reason for the complexity of this function is:
 		//  - creates a list of vertices where every vertex has a unique position (UV ignored)
 		//  - doesn't allow the same poly normal to be added to the same vertex twice
-		void CalculateNormals()
+		public void CalculateNormals()
 		{
 			Vector3[] vertPos;
 			int[] old2new;
@@ -370,14 +368,13 @@ namespace UpspringSharp.geom
 			}
 		}
 
-		void FlipPolygons()
+		public void FlipPolygons()
 		{
 			foreach (Poly pl in poly)
 				pl.Flip();
 		}
 
-
-		void MoveGeometry(PolyMesh dst)
+		public void MoveGeometry(PolyMesh dst)
 		{
 			// offset the vertex indices and move polygons
 			for (int a = 0; a < poly.Length; a++) {
@@ -398,6 +395,21 @@ namespace UpspringSharp.geom
 			verts = null;
 
 			//			InvalidateRenderData();
+		}
+
+		internal void Load3DOTextures()
+		{
+			throw new NotImplementedException();
+		}
+
+		internal void NormalizeNormals()
+		{
+			throw new NotImplementedException();
+		}
+
+		internal Vector3 CalcAveragePos()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }

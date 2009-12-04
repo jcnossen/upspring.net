@@ -1,0 +1,7 @@
+G:\MyProjects\UpspringSharp\dep_src\opentk-1.0-beta-2\Binaries\OpenTK\Debug\OpenTK.dll.config
+G:\MyProjects\UpspringSharp\dep_src\opentk-1.0-beta-2\Binaries\OpenTK\Debug\OpenTK.GLControl.dll
+G:\MyProjects\UpspringSharp\dep_src\opentk-1.0-beta-2\Binaries\OpenTK\Debug\OpenTK.GLControl.pdb
+G:\MyProjects\UpspringSharp\dep_src\opentk-1.0-beta-2\Binaries\OpenTK\Debug\OpenTK.GLControl.xml
+G:\MyProjects\UpspringSharp\dep_src\opentk-1.0-beta-2\Source\GLControl\obj\Debug\ResolveAssemblyReference.cache
+G:\MyProjects\UpspringSharp\dep_src\opentk-1.0-beta-2\Source\GLControl\obj\Debug\OpenTK.GLControl.dll
+G:\MyProjects\UpspringSharp\dep_src\opentk-1.0-beta-2\Source\GLControl\obj\Debug\OpenTK.GLControl.pdb

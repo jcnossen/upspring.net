@@ -105,7 +105,7 @@ namespace UpspringSharp
 
 		void InitGL ()
 		{
-			Gl.glViewport(0,0,w(), h());
+			Gl.glViewport(0,0,Width, Height);
 			Gl.glShadeModel(Gl.GL_SMOOTH);
 			Gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 			Gl.glClearDepth(1.0f);
@@ -123,8 +123,8 @@ namespace UpspringSharp
 		{
 			Gl.glMatrixMode (Gl.GL_PROJECTION);
 			Gl.glLoadIdentity ();
-			Gl.glScalef(2.0f / (float)w(), -2.0f / (float)h(), 1.0f);
-			Gl.glTranslatef (-((float)w() / 2.0f), -((float)h() / 2.0f), 0.0f);
+			Gl.glScalef(2.0f / (float)Width, -2.0f / (float)Height, 1.0f);
+			Gl.glTranslatef(-((float)Width / 2.0f), -((float)Height / 2.0f), 0.0f);
 			Gl.glMatrixMode (Gl.GL_MODELVIEW);
 		}
 
@@ -135,11 +135,11 @@ namespace UpspringSharp
 
 			Gl.glMatrixMode(Gl.GL_PROJECTION);
 			Gl.glLoadIdentity();
-			SetupProjectionMatrix();
-
-			Gl.DrawScene();
-			Gl.SetRasterMatrix();
-			Gl.Draw2D();
+// 			SetupProjectionMatrix();
+// 
+// 			Gl.DrawScene();
+// 			Gl.SetRasterMatrix();
+// 			Gl.Draw2D();
 
 		}
 	}

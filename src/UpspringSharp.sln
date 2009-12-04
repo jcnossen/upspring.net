@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7zip", "7zip\7zip.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "math", "mathlib\math.csproj", "{C7286C96-2B6D-49FA-9089-C316443641D0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deps", "deps", "{FA1E84BE-6798-4057-824E-BA9CD67EB5FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTK.GLControl", "..\deps\opentk\Source\GLControl\OpenTK.GLControl.csproj", "{8CC9D641-0000-0000-0000-000000000000}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTK", "..\deps\opentk\Source\OpenTK\OpenTK.csproj", "{2C035F6B-0000-0000-0000-000000000000}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,8 +53,25 @@ Global
 		{C7286C96-2B6D-49FA-9089-C316443641D0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C7286C96-2B6D-49FA-9089-C316443641D0}.Release|x86.ActiveCfg = Release|x86
 		{C7286C96-2B6D-49FA-9089-C316443641D0}.Release|x86.Build.0 = Release|x86
+		{8CC9D641-0000-0000-0000-000000000000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CC9D641-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CC9D641-0000-0000-0000-000000000000}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8CC9D641-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CC9D641-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CC9D641-0000-0000-0000-000000000000}.Release|x86.ActiveCfg = Release|Any CPU
+		{2C035F6B-0000-0000-0000-000000000000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C035F6B-0000-0000-0000-000000000000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C035F6B-0000-0000-0000-000000000000}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2C035F6B-0000-0000-0000-000000000000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C035F6B-0000-0000-0000-000000000000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C035F6B-0000-0000-0000-000000000000}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D1ADD3CD-D59D-442B-947A-77B227A387E1} = {FA1E84BE-6798-4057-824E-BA9CD67EB5FC}
+		{8CC9D641-0000-0000-0000-000000000000} = {FA1E84BE-6798-4057-824E-BA9CD67EB5FC}
+		{2C035F6B-0000-0000-0000-000000000000} = {FA1E84BE-6798-4057-824E-BA9CD67EB5FC}
 	EndGlobalSection
 EndGlobal

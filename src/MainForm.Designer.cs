@@ -42,6 +42,7 @@
 			this.menuItem3 = new System.Windows.Forms.MenuItem();
 			this.splitContainer = new System.Windows.Forms.SplitContainer();
 			this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
+			this.glView1 = new UpspringSharp.GLView();
 			this.toolStrip = new System.Windows.Forms.ToolStrip();
 			this.toolCamera = new System.Windows.Forms.ToolStripButton();
 			this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -58,7 +59,6 @@
 			this.tabObjTree = new System.Windows.Forms.TabPage();
 			this.tabTextures = new System.Windows.Forms.TabPage();
 			this.materialBrowser = new upspring.MaterialBrowser();
-			this.glView1 = new UpspringSharp.GLView();
 			this.splitContainer.Panel1.SuspendLayout();
 			this.splitContainer.Panel2.SuspendLayout();
 			this.splitContainer.SuspendLayout();
@@ -169,6 +169,14 @@
 			// toolStripContainer.TopToolStripPanel
 			// 
 			this.toolStripContainer.TopToolStripPanel.Controls.Add(this.toolStrip);
+			// 
+			// glView1
+			// 
+			this.glView1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.glView1.Location = new System.Drawing.Point(0, 0);
+			this.glView1.Name = "glView1";
+			this.glView1.Size = new System.Drawing.Size(587, 262);
+			this.glView1.TabIndex = 0;
 			// 
 			// toolStrip
 			// 
@@ -332,14 +340,6 @@
 			this.materialBrowser.Name = "materialBrowser";
 			this.materialBrowser.Size = new System.Drawing.Size(209, 269);
 			this.materialBrowser.TabIndex = 0;
-			// 
-			// glView1
-			// 
-			this.glView1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.glView1.Location = new System.Drawing.Point(0, 0);
-			this.glView1.Name = "glView1";
-			this.glView1.Size = new System.Drawing.Size(587, 262);
-			this.glView1.TabIndex = 0;
 			// 
 			// MainForm
 			// 

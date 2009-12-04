@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -224,7 +224,7 @@ namespace UpspringSharp.geom
 
 		struct FaceVert
 		{
-			public List<int> adjacentFaces = new List<int>();
+			public List<int> adjacentFaces;
 		};
 
 		void CalculateNormals2(float maxSmoothAngle)
@@ -247,12 +247,13 @@ namespace UpspringSharp.geom
 
 			// Determine which faces are using which unique vertex
 			FaceVert[] faceVerts = new FaceVert[old2new.Length]; // one per unique vertex
+			for (int x = 0; x < faceVerts.Length;x++ ) faceVerts[x].adjacentFaces=new List<int>();
 
-			for (int a = 0; a < poly.Length; a++) {
-				Poly pl = poly[a];
-				for (int v = 0; v < pl.Length; v++)
-					faceVerts[old2new[pl[v]]].adjacentFaces.Add(a);
-			}
+				for (int a = 0; a < poly.Length; a++) {
+					Poly pl = poly[a];
+					for (int v = 0; v < pl.Length; v++)
+						faceVerts[old2new[pl[v]]].adjacentFaces.Add(a);
+				}
 
 			// Calculate normals
 			int cnorm = 0;
